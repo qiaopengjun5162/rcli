@@ -268,8 +268,29 @@ cargo add clap --features derive
 cargo add csv
 cargo add serde --features derive
 cargo add serde_json
+
+brew install duckdb
+
+rcli on  dev [!] is 📦 0.1.0 via 🦀 1.82.0 via 🅒 base
+➜ duckdb
+v1.1.3 19864453f7
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database.
+D select * from read_csv('assets/juventus.csv', auto_detect=true);
+
+cargo run -- csv -i assets/juventus.csv
+
+brew install tokei
+tokei .
 ```
 
 ## 参考
 
 - <https://github.com/tyr-rust-bootcamp/template/issues/3>
+- <https://docs.rs/clap/latest/clap/_derive/_tutorial/chapter_0/index.html>
+- <https://docs.rs/clap/latest/clap/_derive/_tutorial/chapter_3/index.html>
+- <https://duckdb.org/>
+- <https://docs.rs/csv/latest/csv/>
+- <https://learnxinyminutes.com/docs/rust/>
+- <https://github.com/XAMPPRocky/tokei>
