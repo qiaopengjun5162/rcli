@@ -280,14 +280,21 @@ Use ".open FILENAME" to reopen on a persistent database.
 D select * from read_csv('assets/juventus.csv', auto_detect=true);
 
 cargo run -- csv -i assets/juventus.csv
-
 brew install tokei
 tokei .
+cargo add toml
+cargo add serde_yaml
 ```
 
 ## 参考
 
 - <https://github.com/tyr-rust-bootcamp/template/issues/3>
+- <https://docs.rs/clap/latest/clap/_derive/_tutorial/chapter_0/index.html>
+- <https://docs.rs/clap/latest/clap/_derive/_tutorial/chapter_3/index.html>
+- <https://duckdb.org/>
+- <https://docs.rs/csv/latest/csv/>
+- <https://learnxinyminutes.com/docs/rust/>
+- <https://github.com/XAMPPRocky/tokei>
 - <https://docs.rs/clap/latest/clap/_derive/_tutorial/chapter_0/index.html>
 - <https://docs.rs/clap/latest/clap/_derive/_tutorial/chapter_3/index.html>
 - <https://duckdb.org/>
