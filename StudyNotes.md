@@ -295,3 +295,9 @@ cargo add serde_yaml
 - <https://docs.rs/csv/latest/csv/>
 - <https://learnxinyminutes.com/docs/rust/>
 - <https://github.com/XAMPPRocky/tokei>
+- <https://docs.rs/clap/latest/clap/_derive/_tutorial/chapter_0/index.html>
+- <https://docs.rs/clap/latest/clap/_derive/_tutorial/chapter_3/index.html>
+- <https://duckdb.org/>
+- <https://docs.rs/csv/latest/csv/>
+- <https://learnxinyminutes.com/docs/rust/>
+- <https://github.com/XAMPPRocky/tokei>

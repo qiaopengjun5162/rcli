@@ -37,6 +37,7 @@ pub struct CsvOpts {
     pub delimiter: char,
 
     #[arg(long, default_value_t = true)] // short = 'h'
+    #[arg(long, default_value_t = true)] // short = 'h'
     pub header: bool,
 }
 
