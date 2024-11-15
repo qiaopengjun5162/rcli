@@ -280,9 +280,10 @@ Use ".open FILENAME" to reopen on a persistent database.
 D select * from read_csv('assets/juventus.csv', auto_detect=true);
 
 cargo run -- csv -i assets/juventus.csv
-
 brew install tokei
 tokei .
+cargo add toml
+cargo add serde_yaml
 ```
 
 ## 参考

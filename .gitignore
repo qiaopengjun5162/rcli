@@ -1,3 +1,4 @@
 /target
-output.json
+output.*
 .vscode/settings.json
+Cargo.lock
