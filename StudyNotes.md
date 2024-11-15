@@ -284,6 +284,9 @@ brew install tokei
 tokei .
 cargo add toml
 cargo add serde_yaml
+cargo add rand
+cargo run -- genpass -l 32
+cargo add zxcvbn
 ```
 
 ## 参考
@@ -301,3 +304,5 @@ cargo add serde_yaml
 - <https://docs.rs/csv/latest/csv/>
 - <https://learnxinyminutes.com/docs/rust/>
 - <https://github.com/XAMPPRocky/tokei>
+- <https://docs.rs/rand/latest/rand/>
+- <https://docs.rs/zxcvbn/latest/zxcvbn/>
