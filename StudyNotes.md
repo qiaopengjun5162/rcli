@@ -287,6 +287,9 @@ cargo add serde_yaml
 cargo add rand
 cargo run -- genpass -l 32
 cargo add zxcvbn
+cargo nextest run -- test_verify_input_file
+cargo add base64
+➜ cargo run -- base64 encode --format urlsafe -i Cargo.toml
 ```
 
 ## 参考

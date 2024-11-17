@@ -3,7 +3,7 @@ use csv::Reader;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
-use crate::opts::OutputFormat;
+use crate::cli::OutputFormat;
 
 #[derive(Debug, Deserialize, Serialize)]
 #[serde(rename_all = "PascalCase")]
@@ -30,7 +30,6 @@ pub fn process_csv(input: &str, output: String, format: OutputFormat) -> Result<
     let content = match format {
         OutputFormat::Json => serde_json::to_string_pretty(&ret)?,
         OutputFormat::Yaml => serde_yaml::to_string(&ret)?,
-        OutputFormat::Toml => toml::to_string(&ret)?,
     };
     std::fs::write(output, content)?;
     Ok(())
