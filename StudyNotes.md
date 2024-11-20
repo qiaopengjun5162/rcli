@@ -290,6 +290,11 @@ cargo add zxcvbn
 cargo nextest run -- test_verify_input_file
 cargo add base64
 ➜ cargo run -- base64 encode --format urlsafe -i Cargo.toml
+cargo run -- text sign
+➜ cargo run -- genpass -l 32 > fixtures/blake3.txt
+cargo run -- text generate -o fixtures
+cargo run -- text generate -o fixtures --format ed25519
+➜ cargo run -- text sign -k fixtures/ed25519.sk --format ed25519
 ```
 
 ## 参考
@@ -309,3 +314,5 @@ cargo add base64
 - <https://github.com/XAMPPRocky/tokei>
 - <https://docs.rs/rand/latest/rand/>
 - <https://docs.rs/zxcvbn/latest/zxcvbn/>
+- <https://github.com/BLAKE3-team/BLAKE3>
+- <https://docs.rs/ed25519-dalek/latest/ed25519_dalek/>

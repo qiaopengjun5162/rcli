@@ -5,5 +5,5 @@ extend-exclude = [
     "CHANGELOG.md",
     "notebooks/*",
     "StudyNotes.md",
-    "fixtures/b64.txt",
+    "fixtures/*",
 ]
