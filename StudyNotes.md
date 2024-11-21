@@ -305,6 +305,7 @@ cargo run -- text generate -o fixtures --format ed25519
 ➜ cargo add axum --features http2 --features query --features tracing
 ➜ RUST_LOG=debug cargo run
 ➜ RUST_LOG=info cargo run -- http serve
+➜ cargo add tower-http --features compression-full --features cors --features trace --features fs
 ```
 
 ## 参考
