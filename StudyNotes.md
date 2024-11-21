@@ -295,6 +295,16 @@ cargo run -- text sign
 cargo run -- text generate -o fixtures
 cargo run -- text generate -o fixtures --format ed25519
 ➜ cargo run -- text sign -k fixtures/ed25519.sk --format ed25519
+➜ git tag -a v1-2-sign-verify
+➜ git push origin v1-2-sign-verify
+➜ git branch
+➜ git branch -d feature/text
+➜ cargo add tokio --features rt --features rt-multi-thread --features macros --features net --features fs
+➜ cargo add tracing
+➜ cargo add tracing-subscriber --features env-filter
+➜ cargo add axum --features http2 --features query --features tracing
+➜ RUST_LOG=debug cargo run
+➜ RUST_LOG=info cargo run -- http serve
 ```
 
 ## 参考
@@ -316,3 +326,6 @@ cargo run -- text generate -o fixtures --format ed25519
 - <https://docs.rs/zxcvbn/latest/zxcvbn/>
 - <https://github.com/BLAKE3-team/BLAKE3>
 - <https://docs.rs/ed25519-dalek/latest/ed25519_dalek/>
+- <https://tokio.rs/>
+- <https://docs.rs/tokio/latest/tokio/>
+- <https://hyper.rs/>
