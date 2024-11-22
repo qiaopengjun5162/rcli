@@ -6,14 +6,15 @@ mod text;
 
 use std::path::{Path, PathBuf};
 
+pub use self::genpass::GenPassOpts;
 pub use self::{
-    base64::{Base64Format, Base64SubCommand},
-    csv::OutputFormat,
-    http::HttpSubCommand,
-    text::{TextSignFormat, TextSubCommand},
+    base64::{Base64DecodeOpts, Base64EncodeOpts, Base64Format, Base64SubCommand},
+    csv::{CsvOpts, OutputFormat},
+    http::*,
+    text::*,
 };
-use self::{csv::CsvOpts, genpass::GenPassOpts};
 use clap::Parser;
+use enum_dispatch::enum_dispatch;
 
 #[derive(Debug, Parser)]
 #[command(name = "rcli", version, author, about, long_about = None)]
@@ -23,22 +24,35 @@ pub struct Opts {
 }
 
 #[derive(Debug, Parser)]
+#[enum_dispatch(CmdExecutor)]
 pub enum SubCommand {
-    #[command(name = "csv", about = "Convert CSV to JSON")]
+    #[command(name = "csv", about = "Show CSV, or Convert CSV to other formats")]
     Csv(CsvOpts),
 
     #[command(name = "genpass", about = "Generate a random password")]
     GenPass(GenPassOpts),
 
-    #[command(subcommand)]
+    #[command(subcommand, about = "Base64 encode or decode")]
     Base64(Base64SubCommand),
 
-    #[command(subcommand)]
+    #[command(subcommand, about = "Text sign or verify")]
     Text(TextSubCommand),
 
-    #[command(subcommand)]
+    #[command(subcommand, about = "HTTP server")]
     Http(HttpSubCommand),
 }
+
+// impl CmdExecutor for SubCommand {
+//     async fn execute(self) -> anyhow::Result<()> {
+//         match self {
+//             SubCommand::Csv(opts) => opts.execute().await,
+//             SubCommand::GenPass(opts) => opts.execute().await,
+//             SubCommand::Base64(cmd) => cmd.execute().await,
+//             SubCommand::Text(cmd) => cmd.execute().await,
+//             SubCommand::Http(cmd) => cmd.execute().await,
+//         }
+//     }
+// }
 
 fn verify_file(filename: &str) -> Result<String, &'static str> {
     // Check if the file exists or input is "-"
