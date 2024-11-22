@@ -5,6 +5,14 @@ rcli is a rust cli tool.
 ## Usage
 
 ```sh
+rcli on  feature/refactor [!] is 📦 0.1.0 via 🦀 1.82.0 via 🅒 base took 5.6s
+➜ cargo run -- genpass -l 32
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.34s
+     Running `target/debug/rcli genpass -l 32`
+aK54VX@m_bwhzFdWoxud^R7by9%4787V
+Password strength: Four
+
+
 rcli on  feature/text [!?] is 📦 0.1.0 via 🦀 1.82.0 via 🅒 base
 ➜ cargo run -- text sign -k fixtures/ed25519.sk --format ed25519
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.26s
