@@ -307,6 +307,7 @@ cargo run -- text generate -o fixtures --format ed25519
 ➜ RUST_LOG=info cargo run -- http serve
 ➜ cargo add tower-http --features compression-full --features cors --features trace --features fs
 ➜ cargo install --path .
+➜ cargo add enum_dispatch
 ```
 
 ## 参考
